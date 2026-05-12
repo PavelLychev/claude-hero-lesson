@@ -89,10 +89,10 @@ ul,ol{list-style:none}
   font-weight:700;letter-spacing:-.02em;font-size:18px;
 }
 .brand-mark{
-  width:28px;height:28px;background:var(--accent-pink);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--ink-dark);font-family:var(--font-jp);font-weight:700;
+  height:28px;
+  display:inline-flex;align-items:center;justify-content:center;
 }
+.brand-mark img{height:100%;width:auto;display:block;object-fit:contain}
 .header-meta{
   font-family:var(--font-mono);
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;
@@ -237,14 +237,15 @@ ul,ol{list-style:none}
   font-family:var(--font-sans);
   font-weight:700;letter-spacing:-.025em;
   font-size:clamp(18px,2vw,24px);
-  line-height:1.15;
-  margin-bottom:10px;
+  line-height:1.2;
+  min-height:2.4em;
+  margin-bottom:12px;
+  display:flex;align-items:flex-start;
 }
 .card-text{
   font-size:14px;
   line-height:1.55;
   color:var(--ink-muted);
-  margin-top:auto;
 }
 
 /* Footer */
@@ -292,7 +293,7 @@ ul,ol{list-style:none}
 @media(max-width:600px){
   .site-header .container-page{height:54px;padding-inline:16px}
   .brand{font-size:16px;gap:8px}
-  .brand-mark{width:24px;height:24px;font-size:14px}
+  .brand-mark{height:24px;padding:4px 7px}
   .container-page{padding-inline:16px}
   .chip{padding:6px 12px;font-size:12.5px}
   .chip-bar{margin-bottom:20px}
@@ -328,8 +329,7 @@ ul,ol{list-style:none}
 <header class="site-header">
   <div class="container-page">
     <a href="#" class="brand">
-      <span class="brand-mark">侍</span>
-      <span>Claude Hero</span>
+      <span class="brand-mark"><img src="images/Logo.png" alt="Claude Hero"></span>
     </a>
     <a class="btn btn-ghost header-cta" href="https://t.me/creo_app_bot?start=6a01e768b52b5b77428006ac" target="_blank" rel="noopener">
       Отримати урок <span class="btn-arrow">→</span>
@@ -368,10 +368,9 @@ ul,ol{list-style:none}
 <!-- WHAT YOU'LL LEARN -->
 <section class="learn section-y">
   <div class="container-page">
-    <div class="chip-bar"><span class="chip" style="background:var(--accent-lime);color:var(--ink-dark)">lesson · що всередині</span></div>
     <div class="section-head">
       <h2 class="section-title h-display">
-        <span class="highlight-pink">Інтегрувати</span> Claude у свою <span class="highlight-lime">роботу та життя</span>
+        Інтегруй Claude у свою роботу та життя
       </h2>
       <p class="section-desc">
         Не теорія про «промпт-інжиніринг», не картинки заради розваг. Робочі зв’язки, які повториш у той самий вечір.
@@ -380,25 +379,21 @@ ul,ol{list-style:none}
 
     <div class="cards cards-4">
       <article class="card">
-        <div class="card-icon">侍</div>
         <h3 class="card-title">Основа Claude</h3>
         <p class="card-text">Все основне, що необхідно знати про Claude. З нуля — щоб одразу почати працювати, без блукань по налаштуваннях.</p>
       </article>
 
       <article class="card">
-        <div class="card-icon pink">美</div>
         <h3 class="card-title">Браузер · Десктоп</h3>
         <p class="card-text">Як працює браузерна версія, як — десктоп. Що коли вмикати і де відчуваєш справжню швидкість.</p>
       </article>
 
       <article class="card">
-        <div class="card-icon">道</div>
         <h3 class="card-title">Skills · Plugins · Connectors</h3>
         <p class="card-text">Як розширюєш Claude під свої задачі: скіли, плагіни, конектори до Notion, Gmail, Figma та решти твого стеку.</p>
       </article>
 
       <article class="card">
-        <div class="card-icon pink">力</div>
         <h3 class="card-title">Проєкти · та інше</h3>
         <p class="card-text">Як організувати роботу через Projects, тримати в одному місці пам’ять, бренд, файли. Плюс дрібниці, які зекономлять години.</p>
       </article>
