@@ -296,6 +296,35 @@ ul,ol{list-style:none}
 
 /* Reusable chip-bar (above section title) */
 .chip-bar{margin-bottom:clamp(20px,3vw,40px)}
+/* Lesson plan divider (between title and cards) */
+.lesson-plan{
+  display:flex;align-items:center;gap:14px;
+  margin:0 0 20px;
+}
+.lesson-plan-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 10px;
+  background:var(--accent-lime);color:var(--ink-dark);
+  font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;line-height:1;
+}
+.lesson-plan-tag::before{
+  content:"";display:inline-block;
+  width:6px;height:6px;background:var(--ink-dark);
+}
+.lesson-plan-line{flex:1;height:1px;background:var(--line)}
+.lesson-plan-count{
+  font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.lesson-plan-count b{color:var(--accent-pink);font-weight:600}
+@media(max-width:600px){
+  .lesson-plan{gap:10px;margin-bottom:14px}
+  .lesson-plan-tag{padding:5px 8px;font-size:10.5px;letter-spacing:.18em}
+  .lesson-plan-count{font-size:10.5px;letter-spacing:.18em}
+}
 /* Lesson footnote line */
 .lesson-note{
   margin-top:clamp(28px,4vw,48px);
@@ -405,6 +434,12 @@ ul,ol{list-style:none}
       <p class="section-desc">
         Не теорія про «промпт-інжиніринг», не картинки заради розваг. Робочі зв’язки, які повториш у той самий вечір.
       </p>
+    </div>
+
+    <div class="lesson-plan">
+      <span class="lesson-plan-tag">програма уроку</span>
+      <span class="lesson-plan-line"></span>
+      <span class="lesson-plan-count"><b>04</b> теми</span>
     </div>
 
     <div class="cards cards-4">
