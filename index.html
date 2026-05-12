@@ -62,8 +62,16 @@ ul,ol{list-style:none}
   line-height:1;
   display:inline-flex;
 }
-.highlight-pink{background:var(--accent-pink);color:var(--ink-dark);line-height:inherit;padding:0 8px;display:inline-block}
-.highlight-lime{background:var(--accent-lime);color:var(--ink-dark);line-height:inherit;padding:0 8px;display:inline-block}
+.highlight-pink,.highlight-lime{
+  color:var(--ink-dark);
+  padding:.05em .25em;
+  display:inline;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+  line-height:1.15;
+}
+.highlight-pink{background:var(--accent-pink)}
+.highlight-lime{background:var(--accent-lime)}
 
 /* Header */
 .site-header{
@@ -74,7 +82,7 @@ ul,ol{list-style:none}
 }
 .site-header .container-page{
   display:flex;align-items:center;justify-content:space-between;
-  height:72px;
+  height:60px;
 }
 .brand{
   display:flex;align-items:center;gap:10px;
@@ -98,8 +106,8 @@ ul,ol{list-style:none}
 /* CTA Buttons */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
-  gap:10px;height:56px;padding:0 32px;
-  font-size:16px;font-weight:500;
+  gap:8px;height:48px;padding:0 24px;
+  font-size:15px;font-weight:500;
   transition:all .25s ease;
   border:2px solid transparent;
   will-change:transform;
@@ -110,11 +118,6 @@ ul,ol{list-style:none}
   border-color:var(--ink-dark);
 }
 .btn-pink:hover{background:var(--ink-dark);color:var(--accent-pink);border-color:var(--accent-pink)}
-.btn-lime{
-  background:var(--accent-lime);color:var(--ink-dark);
-  border-color:var(--ink-dark);
-}
-.btn-lime:hover{background:var(--ink-dark);color:var(--accent-lime);border-color:var(--accent-lime)}
 .btn-ghost{
   background:transparent;color:var(--ink);
   border-color:var(--line);
@@ -156,11 +159,11 @@ ul,ol{list-style:none}
   color:var(--ink-muted);
 }
 .hero-title{
-  font-size:clamp(40px,7vw,108px);
-  line-height:.92;
-  letter-spacing:-.045em;
+  font-size:clamp(40px,6vw,88px);
+  line-height:.95;
+  letter-spacing:-.04em;
   font-weight:700;
-  max-width:1000px;
+  max-width:900px;
   margin-bottom:28px;
 }
 .hero-sub{
@@ -190,9 +193,9 @@ ul,ol{list-style:none}
   .section-head{grid-template-columns:1.4fr 1fr;align-items:end;gap:40px}
 }
 .section-title{
-  font-size:clamp(32px,5.5vw,80px);
-  line-height:.95;
-  letter-spacing:-.04em;
+  font-size:clamp(28px,3.8vw,56px);
+  line-height:1.02;
+  letter-spacing:-.035em;
   font-weight:700;
   max-width:760px;
 }
@@ -207,20 +210,20 @@ ul,ol{list-style:none}
 }
 .cards{
   display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
-@media(min-width:768px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1100px){.cards-4{grid-template-columns:repeat(4,1fr)}}
 .card{
   display:flex;flex-direction:column;
-  padding:22px;
+  padding:16px;
   background:rgba(19,19,19,.5);
   border:1px solid var(--line);
   transition:background .25s ease,transform .25s ease;
-  min-height:200px;
+  min-height:180px;
   position:relative;
 }
+@media(min-width:768px){.card{padding:22px;min-height:200px}}
 .card:hover{background:rgba(19,19,19,.85);transform:translateY(-4px)}
 .card-icon{
   width:36px;height:36px;
@@ -244,84 +247,11 @@ ul,ol{list-style:none}
   margin-top:auto;
 }
 
-/* Author */
-.author{background:var(--bg);position:relative}
-.author-grid{
-  display:grid;grid-template-columns:1fr;gap:32px;
-}
-@media(min-width:900px){.author-grid{grid-template-columns:4fr 8fr;gap:48px}}
-.author-photo{
-  aspect-ratio:4/5;width:100%;
-  background-size:cover;background-position:center;
-  background-color:var(--bg-alt);
-  filter:grayscale(1) contrast(1.05);
-  transition:filter .5s ease;
-}
-.author-photo:hover{filter:grayscale(0) contrast(1.02)}
-@media(min-width:900px){
-  .author-photo{position:sticky;top:96px;align-self:start}
-}
-.author-text{display:flex;flex-direction:column;gap:20px}
-.author-name{
-  font-size:clamp(36px,6.5vw,92px);
-  line-height:.95;
-  letter-spacing:-.04em;
-  font-weight:700;
-}
-.author-bio{
-  font-size:clamp(15px,1.4vw,17px);
-  line-height:1.55;
-  color:rgba(240,238,234,.9);
-}
-/* Final CTA */
-.final-cta{
-  position:relative;overflow:hidden;
-  background:var(--bg);
-  padding-block:clamp(64px,9vh,112px);
-}
-.final-cta-bg{
-  position:absolute;
-  font-family:var(--font-jp);
-  font-weight:300;
-  color:rgba(163,238,11,.05);
-  font-size:clamp(360px,55vw,820px);
-  line-height:.8;
-  bottom:-120px;left:-80px;
-  pointer-events:none;user-select:none;
-}
-.final-cta .container-page{position:relative;z-index:1}
-.final-cta-inner{
-  max-width:1100px;
-}
-.final-cta-title{
-  font-size:clamp(48px,9vw,140px);
-  line-height:.92;
-  letter-spacing:-.04em;
-  font-weight:700;
-  margin-bottom:32px;
-}
-.final-cta-sub{
-  font-size:clamp(17px,1.7vw,22px);
-  color:rgba(240,238,234,.85);
-  line-height:1.5;
-  max-width:680px;
-  margin-bottom:48px;
-}
-.final-cta-actions{
-  display:flex;flex-wrap:wrap;gap:16px;align-items:center;
-}
-.final-cta-note{
-  font-family:var(--font-mono);
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink-faint);
-  margin-top:32px;
-}
-
 /* Footer */
 .site-footer{
   border-top:1px solid var(--line);
   background:var(--bg);
-  padding-block:48px;
+  padding-block:28px;
 }
 .site-footer .container-page{
   display:flex;flex-wrap:wrap;justify-content:space-between;
@@ -333,20 +263,63 @@ ul,ol{list-style:none}
   color:var(--ink-faint);
 }
 
-/* helpers */
-.tag-lime{
-  background:var(--accent-lime);color:var(--ink-dark);
-  padding:2px 8px;font-family:var(--font-mono);font-size:11px;
-  letter-spacing:.2em;text-transform:uppercase;font-weight:600;
-}
-.tag-pink{
-  background:var(--accent-pink);color:var(--ink-dark);
-  padding:2px 8px;font-family:var(--font-mono);font-size:11px;
-  letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+/* Reusable chip-bar (above section title) */
+.chip-bar{margin-bottom:clamp(20px,3vw,40px)}
+/* Lesson footnote line */
+.lesson-note{
+  margin-top:clamp(28px,4vw,48px);
+  font-family:var(--font-mono);
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-faint);
+  line-height:1.6;
 }
 
+/* Tablet */
+@media(max-width:1024px){
+  .hero{padding-top:108px;padding-bottom:48px}
+  .hero-bg-char{font-size:clamp(360px,65vw,620px);right:-50px}
+}
+/* Small tablet / large phone */
+@media(max-width:768px){
+  .hero{padding-top:96px;padding-bottom:40px}
+  .hero-bg-char{font-size:clamp(280px,80vw,520px);top:-20px;right:-60px;color:rgba(248,89,247,.04)}
+  .hero-meta{gap:8px;margin-bottom:22px}
+  .hero-title{margin-bottom:20px}
+  .hero-sub{margin-bottom:24px}
+  .hero-actions{gap:10px}
+}
+/* Phone */
 @media(max-width:600px){
-  .hero{padding-top:130px}
+  .site-header .container-page{height:54px;padding-inline:16px}
+  .brand{font-size:16px;gap:8px}
+  .brand-mark{width:24px;height:24px;font-size:14px}
+  .container-page{padding-inline:16px}
+  .chip{padding:6px 12px;font-size:12.5px}
+  .chip-bar{margin-bottom:20px}
+  .cards{gap:8px}
+  .card{padding:14px;min-height:auto}
+  .card-icon{width:32px;height:32px;font-size:18px;margin-bottom:12px}
+  .card-title{margin-bottom:8px}
+  .card-text{font-size:13px;line-height:1.5}
+  .section-head{margin-bottom:24px}
+  .lesson-note{margin-top:24px;font-size:11px}
+  .site-footer{padding-block:20px}
+  .site-footer .container-page{flex-direction:column;align-items:flex-start;gap:8px}
+}
+/* Narrow phone */
+@media(max-width:400px){
+  .hero{padding-top:90px}
+  .hero-title{letter-spacing:-.035em}
+  .hero-meta-text{font-size:10.5px;letter-spacing:.15em}
+  .btn{padding:0 18px;font-size:14px;height:46px}
+  .hero-actions-meta{font-size:10.5px;letter-spacing:.15em}
+  .card-text{font-size:12.5px}
+  .footer-text{font-size:10.5px;letter-spacing:.15em}
+}
+/* Very narrow */
+@media(max-width:340px){
+  .cards{grid-template-columns:1fr}
+  .card{min-height:auto}
 }
 </style>
 </head>
@@ -358,7 +331,6 @@ ul,ol{list-style:none}
       <span class="brand-mark">侍</span>
       <span>Claude Hero</span>
     </a>
-    <div class="header-meta">free lesson · від CREO</div>
     <a class="btn btn-ghost header-cta" href="https://t.me/creo_app_bot?start=6a01e768b52b5b77428006ac" target="_blank" rel="noopener">
       Отримати урок <span class="btn-arrow">→</span>
     </a>
@@ -396,13 +368,13 @@ ul,ol{list-style:none}
 <!-- WHAT YOU'LL LEARN -->
 <section class="learn section-y">
   <div class="container-page">
-    <div style="margin-bottom:40px"><span class="chip" style="background:var(--accent-lime);color:var(--ink-dark)">lesson · що всередині</span></div>
+    <div class="chip-bar"><span class="chip" style="background:var(--accent-lime);color:var(--ink-dark)">lesson · що всередині</span></div>
     <div class="section-head">
       <h2 class="section-title h-display">
-        Що в <span class="highlight-pink">уроці</span>
+        <span class="highlight-pink">Інтегрувати</span> Claude у свою <span class="highlight-lime">роботу та життя</span>
       </h2>
       <p class="section-desc">
-        Не теорія про «промпт-інжиніринг», не картинки заради розваг. Робочі зв’язки, які можна повторити в той самий вечір. Все про те, як інтегрувати Claude у свою роботу та життя.
+        Не теорія про «промпт-інжиніринг», не картинки заради розваг. Робочі зв’язки, які повториш у той самий вечір.
       </p>
     </div>
 
@@ -432,54 +404,7 @@ ul,ol{list-style:none}
       </article>
     </div>
 
-    <p style="margin-top:48px;font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);max-width:760px;line-height:1.6">
-      · урок для новачків ·
-    </p>
-  </div>
-</section>
-
-<!-- AUTHOR -->
-<section class="author section-y">
-  <div class="container-page">
-    <div style="margin-bottom:40px"><span class="chip" style="background:var(--accent-pink);color:var(--ink-dark)">про автора</span></div>
-    <div class="author-grid">
-      <div class="author-photo" style="background-image:url(https://claude-hero-v2.vercel.app/images/vitalii-portrait.jpg)" aria-label="Віталій Вальков"></div>
-      <div class="author-text">
-        <h2 class="author-name h-display">Віталій <span class="highlight-pink">Вальков</span></h2>
-        <p class="author-bio">
-          Засновник <strong>CREO</strong> — школи AI та дизайну з 2018 року. 8000+ студентів, 60 000+ ком’юніті. 12+ років у дизайні та продакшені. Повністю перейшов на Claude у січні 2026 — і навчає не теорії, а тому, що сам використовує щодня.
-        </p>
-        <p class="author-bio" style="color:var(--ink-muted);font-size:clamp(15px,1.5vw,17px)">
-          Цей урок — концентрат його щоденного робочого процесу. Без води, без «давайте з історії штучного інтелекту». Сів, подивився, повторив.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="final-cta-bg" aria-hidden="true">力</div>
-  <div class="container-page">
-    <div style="margin-bottom:32px;display:flex;flex-wrap:wrap;gap:12px">
-      <span class="tag-lime">100% безкоштовно</span>
-      <span class="tag-pink">доступ через telegram</span>
-    </div>
-    <div class="final-cta-inner">
-      <h2 class="final-cta-title h-display">
-        Епоха команд із десяти спеціалістів — <span class="highlight-lime">закінчилась</span>.
-      </h2>
-      <p class="final-cta-sub">
-        Не пропусти один урок, після якого більше не схочеш платити агенціям за те, що Claude робить тобі за вечір.
-      </p>
-      <div class="final-cta-actions">
-        <a class="btn btn-lime" href="https://t.me/creo_app_bot?start=6a01e768b52b5b77428006ac" target="_blank" rel="noopener">
-          Отримати урок <span class="btn-arrow">→</span>
-        </a>
-        <span class="hero-actions-meta">· один клік · 0 ₴ · одразу в telegram</span>
-      </div>
-      <div class="final-cta-note">侍 · опануй · не повторюй вчорашнього дня</div>
-    </div>
+    <p class="lesson-note">· урок для новачків ·</p>
   </div>
 </section>
 
