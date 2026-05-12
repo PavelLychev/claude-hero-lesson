@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="https://claude-hero-v2.vercel.app/favicon.ico?favicon.0x3dzn~oxb6tn.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0a0a0a;
@@ -27,9 +27,8 @@
   --accent-soft:#d63ad5;
   --line:#f0eeea1f;
   --line-dark:#0a0a0a26;
-  --font-sans:"Geist","Geist Fallback",ui-sans-serif,system-ui,sans-serif;
-  --font-mono:"Geist Mono","Geist Mono Fallback",ui-monospace,monospace;
-  --font-display:"Fraunces","Fraunces Fallback",serif;
+  --font-sans:"Geist",ui-sans-serif,system-ui,sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,monospace;
   --font-jp:"Noto Serif JP",serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;border:0 solid}
@@ -51,9 +50,6 @@ ul,ol{list-style:none}
 /* Utilities */
 .container-page{width:100%;max-width:1440px;margin-inline:auto;padding-inline:clamp(24px,5vw,48px)}
 .section-y{padding-block:clamp(80px,12vh,160px)}
-.font-display{font-family:var(--font-sans);letter-spacing:-.035em;font-weight:700;line-height:1}
-.font-jp{font-family:var(--font-jp)}
-.font-mono-tag{font-family:var(--font-mono);letter-spacing:.2em;text-transform:uppercase;font-size:11px}
 .h-display{font-family:var(--font-sans);letter-spacing:-.04em;font-weight:700;line-height:.95}
 .chip{
   font-family:var(--font-sans);
@@ -183,55 +179,6 @@ ul,ol{list-style:none}
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--ink-faint);
 }
-.hero-stats{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px;
-  padding-top:48px;
-  border-top:1px solid var(--line);
-  max-width:880px;
-}
-@media(min-width:768px){.hero-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.stat-num{
-  font-family:var(--font-sans);
-  font-weight:700;letter-spacing:-.04em;
-  font-size:clamp(32px,4vw,52px);
-  color:var(--ink);
-  line-height:1;
-  margin-bottom:8px;
-}
-.stat-num.lime{color:var(--accent-lime)}
-.stat-num.pink{color:var(--accent-pink)}
-.stat-label{
-  font-family:var(--font-mono);
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink-muted);
-  line-height:1.4;
-}
-
-/* Marquee */
-.marquee{
-  overflow:hidden;
-  padding-block:24px;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:var(--bg);
-}
-.marquee-track{
-  display:flex;gap:48px;
-  animation:scroll 45s linear infinite;
-  white-space:nowrap;
-}
-.marquee span{
-  font-family:var(--font-jp);
-  font-weight:300;
-  font-size:clamp(28px,4vw,56px);
-  line-height:1;
-  color:rgba(240,238,234,.85);
-}
-.marquee .dot{color:var(--accent-pink);margin-inline:24px}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 /* What you'll learn */
 .learn{background:var(--bg);position:relative}
 .section-head{
@@ -303,60 +250,6 @@ ul,ol{list-style:none}
   margin-top:auto;
 }
 
-/* For whom */
-.audience{
-  position:relative;overflow:hidden;
-  background:var(--bg-light);color:var(--ink-dark);
-}
-.audience-bg-char{
-  position:absolute;
-  font-family:var(--font-jp);
-  font-weight:300;
-  color:rgba(10,10,10,.06);
-  font-size:clamp(220px,32vw,440px);
-  line-height:1;
-  left:-40px;bottom:0;
-  pointer-events:none;user-select:none;
-}
-.audience .container-page{position:relative;z-index:1}
-.audience .chip{background:var(--ink-dark);color:var(--ink)}
-.audience .section-title{color:var(--ink-dark)}
-.audience .section-desc{color:var(--ink-dark-muted)}
-.aud-cards{
-  display:grid;grid-template-columns:1fr;gap:12px;
-}
-@media(min-width:768px){.aud-cards{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.aud-cards{grid-template-columns:repeat(3,1fr)}}
-.aud-card{
-  display:flex;flex-direction:column;
-  padding:32px;
-  transition:transform .25s ease;
-  min-height:220px;
-}
-.aud-card:hover{transform:translateY(-4px)}
-.aud-card.dark{background:var(--ink-dark);color:var(--ink)}
-.aud-card.dark .aud-card-text{color:var(--ink-muted)}
-.aud-card.light{background:var(--bg-light-alt);color:var(--ink-dark)}
-.aud-card.light .aud-card-text{color:var(--ink-dark-muted)}
-.aud-card.lime{background:var(--accent-lime);color:var(--ink-dark)}
-.aud-card.lime .aud-card-text{color:rgba(10,10,10,.75)}
-.aud-bar{
-  display:inline-block;height:8px;width:40px;margin-bottom:24px;
-  background:var(--accent-lime);
-}
-.aud-bar.pink{background:var(--accent-pink)}
-.aud-bar.dark{background:var(--ink-dark)}
-.aud-card-title{
-  font-family:var(--font-sans);
-  font-weight:700;letter-spacing:-.025em;
-  font-size:clamp(20px,2.2vw,28px);
-  line-height:1.05;
-  margin-bottom:16px;
-}
-.aud-card-text{
-  font-size:15px;line-height:1.625;
-}
-
 /* Author */
 .author{background:var(--bg);position:relative}
 .author-grid{
@@ -386,25 +279,6 @@ ul,ol{list-style:none}
   line-height:1.625;
   color:rgba(240,238,234,.9);
 }
-.author-meta{
-  display:grid;grid-template-columns:1fr 1fr;gap:16px;
-  padding-top:32px;
-  border-top:1px solid var(--line);
-}
-.author-meta-item .num{
-  font-size:clamp(28px,3.5vw,44px);
-  font-weight:700;letter-spacing:-.04em;
-  color:var(--accent-lime);
-  line-height:1;
-  margin-bottom:8px;
-}
-.author-meta-item .lbl{
-  font-family:var(--font-mono);
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--ink-muted);
-  line-height:1.4;
-}
-
 /* Final CTA */
 .final-cta{
   position:relative;overflow:hidden;
@@ -479,8 +353,6 @@ ul,ol{list-style:none}
 
 @media(max-width:600px){
   .hero{padding-top:130px}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .author-meta{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -515,7 +387,7 @@ ul,ol{list-style:none}
     </h1>
 
     <p class="hero-sub">
-      Дізнайся, як одна людина за вечір робить роботу, на яку раніше йшов відділ із десяти спеціалістів. Дизайн, контент, лендоси, агенти — без агенцій, без фрилансерів, без знань коду.
+      Дізнайся, як одна людина за вечір робить роботу, на яку раніше йшов відділ із десяти спеціалістів.
     </p>
 
     <div class="hero-actions">
@@ -524,37 +396,8 @@ ul,ol{list-style:none}
       </a>
       <span class="hero-actions-meta">· через telegram · 0 ₴</span>
     </div>
-
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num lime">1</div>
-        <div class="stat-label">урок · повна цінність</div>
-      </div>
-      <div>
-        <div class="stat-num pink">8000+</div>
-        <div class="stat-label">студентів CREO</div>
-      </div>
-      <div>
-        <div class="stat-num">60K</div>
-        <div class="stat-label">учасників ком’юніті</div>
-      </div>
-      <div>
-        <div class="stat-num">12 рр.</div>
-        <div class="stat-label">в дизайні · продакшені</div>
-      </div>
-    </div>
   </div>
 </section>
-
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>侍 · 道 · 美 · 力 · 風 · 火 · 山 · 林 <span class="dot">·</span></span>
-    <span>侍 · 道 · 美 · 力 · 風 · 火 · 山 · 林 <span class="dot">·</span></span>
-    <span>侍 · 道 · 美 · 力 · 風 · 火 · 山 · 林 <span class="dot">·</span></span>
-    <span>侍 · 道 · 美 · 力 · 風 · 火 · 山 · 林 <span class="dot">·</span></span>
-  </div>
-</div>
 
 <!-- WHAT YOU'LL LEARN -->
 <section class="learn section-y">
@@ -596,7 +439,7 @@ ul,ol{list-style:none}
     </div>
 
     <p style="margin-top:48px;font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);max-width:760px;line-height:1.6">
-      · урок для новачків · 66% глядачів — саме такі, як ти · приємного перегляду ·
+      · урок для новачків ·
     </p>
   </div>
 </section>
@@ -615,24 +458,6 @@ ul,ol{list-style:none}
         <p class="author-bio" style="color:var(--ink-muted);font-size:clamp(15px,1.5vw,17px)">
           Цей урок — концентрат його щоденного робочого процесу. Без води, без «давайте з історії штучного інтелекту». Сів, подивився, повторив.
         </p>
-        <div class="author-meta">
-          <div class="author-meta-item">
-            <div class="num">8000+</div>
-            <div class="lbl">студентів</div>
-          </div>
-          <div class="author-meta-item">
-            <div class="num">60K</div>
-            <div class="lbl">в ком’юніті</div>
-          </div>
-          <div class="author-meta-item">
-            <div class="num">12 рр.</div>
-            <div class="lbl">в дизайні</div>
-          </div>
-          <div class="author-meta-item">
-            <div class="num">2018</div>
-            <div class="lbl">рік заснування CREO</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
