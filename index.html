@@ -233,14 +233,7 @@ ul,ol{list-style:none}
 }
 .card:nth-child(2)::before,
 .card:nth-child(4)::before{background:var(--accent-pink)}
-.card-num{
-  position:absolute;top:14px;right:14px;
-  font-family:var(--font-mono);
-  font-size:10px;letter-spacing:.18em;
-  color:var(--ink-faint);
-  font-weight:500;
-}
-@media(min-width:768px){.card{padding:24px 22px 22px;min-height:200px}.card-num{top:18px;right:18px}}
+@media(min-width:768px){.card{padding:24px 22px 22px;min-height:200px}}
 .card:hover{
   background:linear-gradient(180deg,rgba(34,34,38,.95) 0%,rgba(22,22,24,.85) 100%);
   border-color:rgba(240,238,234,.18);
@@ -416,25 +409,21 @@ ul,ol{list-style:none}
 
     <div class="cards cards-4">
       <article class="card">
-        <span class="card-num">01</span>
         <h3 class="card-title">Основа Claude</h3>
         <p class="card-text">Все основне, що необхідно знати про Claude. З нуля — щоб одразу почати працювати, без блукань по налаштуваннях.</p>
       </article>
 
       <article class="card">
-        <span class="card-num">02</span>
         <h3 class="card-title">Браузер · Десктоп</h3>
         <p class="card-text">Як працює браузерна версія, як — десктоп. Що коли вмикати і де відчуваєш справжню швидкість.</p>
       </article>
 
       <article class="card">
-        <span class="card-num">03</span>
         <h3 class="card-title">Skills · Plugins · Connectors</h3>
         <p class="card-text">Як розширюєш Claude під свої задачі: скіли, плагіни, конектори до Notion, Gmail, Figma та решти твого стеку.</p>
       </article>
 
       <article class="card">
-        <span class="card-num">04</span>
         <h3 class="card-title">Проєкти · та інше</h3>
         <p class="card-text">Як організувати роботу через Projects, тримати в одному місці пам’ять, бренд, файли. Плюс дрібниці, які зекономлять години.</p>
       </article>
